@@ -10,7 +10,7 @@ if not os.path.exists(nb_folder):
     os.makedirs(nb_folder)
 # startup.sh should be saved in Notebooks folder (nb_folder) and contain:
 # zotero --headless & start.sh jupyter lab --LabApp.token='notebook'
-cmd = r"docker run --rm --name=jupyter --env JUPYTER_RUNTIME_DIR=/tmp -v "+nb_folder+":/home/jovyan -p 8888:8888 jupyter/custom /home/jovyan/startup.sh"
+cmd = r"docker run --rm --name=jupyter --env JUPYTER_RUNTIME_DIR=/tmp -v "+nb_folder+":/home/jovyan -p 8888:8888 devincprescott/jupyter-custom  /home/jovyan/startup.sh"
 print(cmd)
 try:
     print('Killing Container')
